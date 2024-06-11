@@ -15,7 +15,7 @@
             <div class="search-elements">
                 <!--<form class="searchForm">-->
                     <input id="name" type="text" name="name" placeholder="Enter city name" autocomplete="off">
-                    <button id="submit"> <img src="images/search.png" width="30" height="30 alt="search-icon"> </button>
+                    <button id="submit"> <img src="search.png" width="30" height="30 alt="search-icon"> </button>
             </div>
             <div class="error">
                 <p>Invalid City Name</p>
@@ -28,7 +28,7 @@
 
             <div class="temp">
                 <div class="weather-icon">
-                    <img src="../Weather App/images/clear.png" class="humiditylogo1" alt="Weather Icon" width="140" height="140">
+                    <img src="clear.png" class="humiditylogo1" alt="Weather Icon" width="140" height="140">
                 </div>
                 <div class="temp-city">
                     <div id="celcius"><h1 class="celcius1">22°C</h1></div>
@@ -39,7 +39,7 @@
             <div class="extra">
                 <div class="humidity">
                     <div class="humiditylogo">
-                        <img src="../Weather App/images/humidity.png"  width="50" height="50" alt="Humidity" autocomplete="off">
+                        <img src="humidity.png"  width="50" height="50" alt="Humidity" autocomplete="off">
                     </div>
                     <div class="humidity-content">
                         <h2 class="humidity1">50 %</h2>
@@ -48,7 +48,7 @@
                 </div>
                 <div class="wind-speed">
                     <div class="wind-speed-logo">
-                        <img src="../Weather App/images/wind.png" width="50" height="50" alt="Wind Speed" autocomplete="off">
+                        <img src="wind.png" width="50" height="50" alt="Wind Speed" autocomplete="off">
                     </div>
                     <div class="humidity-content">
                         <h2 class="windspeed1">50 km/h</h2>
@@ -88,18 +88,18 @@
         document.querySelector(".windspeed1").innerHTML = data.wind.speed + "km/h";
 
         if(data.weather[0].main == "Clouds") {
-            weatherIcon.src = "images/clouds.png";
+            weatherIcon.src = "clouds.png";
         } else if (data.weather[0].main == "Clear") {
-            weatherIcon.src = "images/clear.png";
+            weatherIcon.src = "clear.png";
         } 
         else if (data.weather[0].main == "Rain") {
-            weatherIcon.src = "images/rain.png";
+            weatherIcon.src = "rain.png";
         } 
         else if (data.weather[0].main == "Drizzle") {
-            weatherIcon.src = "images/drizzle.png";
+            weatherIcon.src = "drizzle.png";
         } 
         else if (data.weather[0].main == "Mist") {
-            weatherIcon.src = "images/mist.png";
+            weatherIcon.src = "mist.png";
         } 
 
         document.querySelector(".temp").style.display = "block";
