@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Weather Application</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+        </style>
+</head>
+<body>
+    <div class="flex-container">
+        <div class="box">
+            <div class="search-elements">
+                <!--<form class="searchForm">-->
+                    <input id="name" type="text" name="name" placeholder="Enter city name" autocomplete="off">
+                    <button id="submit"> <img src="images/search.png" width="30" height="30 alt="search-icon"> </button>
+            </div>
+            <div class="error">
+                <p>Invalid City Name</p>
+            </div>
+            <div class="welcome">
+                <p>Welcome</p>
+                <p>Enter your desired city above</p>
+                <p>and click on the search icon!</p>
+            </div>
+
+            <div class="temp">
+                <div class="weather-icon">
+                    <img src="../Weather App/images/clear.png" class="humiditylogo1" alt="Weather Icon" width="140" height="140">
+                </div>
+                <div class="temp-city">
+                    <div id="celcius"><h1 class="celcius1">22°C</h1></div>
+                    <div id="city"><h2 class="city1">New York</h2></div>
+                </div>
+            </div>
+
+            <div class="extra">
+                <div class="humidity">
+                    <div class="humiditylogo">
+                        <img src="../Weather App/images/humidity.png"  width="50" height="50" alt="Humidity" autocomplete="off">
+                    </div>
+                    <div class="humidity-content">
+                        <h2 class="humidity1">50 %</h2>
+                        <p>Humidity</p>
+                    </div>
+                </div>
+                <div class="wind-speed">
+                    <div class="wind-speed-logo">
+                        <img src="../Weather App/images/wind.png" width="50" height="50" alt="Wind Speed" autocomplete="off">
+                    </div>
+                    <div class="humidity-content">
+                        <h2 class="windspeed1">50 km/h</h2>
+                        <p>Wind Speed</p>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+</body>
+<footer class="foot">
+    <p>Made with &hearts; in India by <a id="profile" href="https://askgurdit.github.io/Responsive-File-Card1/">Gurdit Singh</a></p>
+    <p>&copy; 2024 Weather Application. All rights reserved.</p>
+</footer>
+<script>
+    const apiKey = "8e7c1ea60bfd0a1a2aebf77acb68464c";
+    const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
+
+    const searchBox = document.querySelector(".search-elements input");
+    const searchButton = document.querySelector(".search-elements button");
+    const weatherIcon = document.querySelector(".humiditylogo1");
+
+    async function checkWeather(city1) {
+        const response = await fetch(apiUrl + city1 + `&appid=${apiKey}`);
+
+        if (response.status == 404) {
+            document.querySelector(".error").style.display = "block";
+            document.querySelector(".temp").style.display = "none";
+            document.querySelector(".extra").style.display = "none";
+        }else {
+            var data = await response.json();
+        
+       
+        document.querySelector(".city1").innerHTML = data.name;
+        document.querySelector(".celcius1").innerHTML = Math.round(data.main.temp )+ "°C";
+        document.querySelector(".humidity1").innerHTML = data.main.humidity + "%";
+        document.querySelector(".windspeed1").innerHTML = data.wind.speed + "km/h";
+
+        if(data.weather[0].main == "Clouds") {
+            weatherIcon.src = "images/clouds.png";
+        } else if (data.weather[0].main == "Clear") {
+            weatherIcon.src = "images/clear.png";
+        } 
+        else if (data.weather[0].main == "Rain") {
+            weatherIcon.src = "images/rain.png";
+        } 
+        else if (data.weather[0].main == "Drizzle") {
+            weatherIcon.src = "images/drizzle.png";
+        } 
+        else if (data.weather[0].main == "Mist") {
+            weatherIcon.src = "images/mist.png";
+        } 
+
+        document.querySelector(".temp").style.display = "block";
+        document.querySelector(".extra").style.display = "flex"
+        document.querySelector(".error").style.display = "none";
+        }
+        
+
+    }
+
+    searchButton.addEventListener("click" , ()=> {
+        document.querySelector(".welcome").style.display = "none";
+        checkWeather(searchBox.value);
+
+    })
+    
+
+</script>
+</html>

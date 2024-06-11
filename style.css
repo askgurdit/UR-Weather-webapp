@@ -1,0 +1,173 @@
+body {
+    height: 100%;
+    margin: 0;
+    background: linear-gradient(135deg, #99ffebd6, #293163d4);
+    font-family: "Montserrat";
+    color:aliceblue;
+}
+// <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 100 to 900
+
+.montserrat-font {
+  font-family: "Montserrat";
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.box {
+    height: 530px;
+    width: 420px;
+    background: linear-gradient(135deg, #29b99c, #1d2243);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.searchbox {
+    margin-top: 20px;
+}
+
+.search-button {
+    margin-top: 20px;
+}
+
+#name {
+    height: 38px;
+    width: 260px;
+    margin-left: 0px;
+    margin-top: 4px;
+    border-radius: 12px;
+    border-color: aliceblue;
+    font-family: "Montserrat" ;
+    text-align:center;
+    font-style: oblique;
+    font-weight: 600;
+}
+
+#submit {
+    height: 40px;
+    width: 60px;
+    margin-left: 30px;
+    margin-right: 0px;
+    margin-top: 5px;
+    border-radius: 6px;
+    border-color: aliceblue;
+}
+
+.search-elements {
+    height: 100px;
+    width: 418px;
+    display: flex;
+    justify-content:space-around;
+}
+
+.temp {
+    height: 250px;
+    width: 418px;
+}
+
+.extra {
+    height: 150px;
+    width: 418px;
+    display: flex;
+}
+
+.weather-icon {
+    display: flex;
+    justify-content: center;
+    }
+
+.temp-city {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.temp-city div {
+    margin-top: -35px;
+}
+
+#celcius {
+    font-size: x-large;
+    color: #f8f9fa;
+}
+
+#city {
+    font-size: large;
+    font-variant: small-caps;
+    color: #f8f9fa;
+}
+
+.humidity {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.humidity div {
+    margin-left: 20px;
+}
+
+.wind-speed {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-left: 30px;
+}
+
+.humidity-content {
+    margin-left: 20px;
+    font-size: large;
+    color: #f8f9fa;
+    font-weight: bolder;
+}
+
+.humidity-content p {
+    margin-top: -20px;
+}
+
+.foot p {
+    text-align: center;
+    color: white;
+    font-size: medium;
+    margin-top: -25px;
+    margin-bottom: 40px;
+    font-weight: 800;
+    font-size: large;
+}
+.temp {
+    display : none;
+} 
+.extra {
+    display : none;
+}
+.error {
+    display: none;
+}
+.welcome {
+    margin-bottom: 100px;
+    font-family: "Montserrat";
+    font-weight: 550;
+    display:block;
+}
+#profile {
+    color: aliceblue;
+
+}
